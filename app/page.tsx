@@ -23,7 +23,7 @@ export default function Home() {
             {/* Twitch Embed */}
             <div className="aspect-video bg-black rounded-lg overflow-hidden">
               <iframe
-                src="https://player.twitch.tv/?channel=pongblaster&parent=shelldon.live&parent=www.shelldon.live&parent=localhost&parent=shelldon-website.vercel.app&muted=false"
+                src="https://player.twitch.tv/?channel=shelldonlive&parent=shelldon.live&parent=www.shelldon.live&parent=localhost&parent=shelldon-website.vercel.app&muted=false"
                 height="100%"
                 width="100%"
                 allowFullScreen={true}
@@ -33,7 +33,7 @@ export default function Home() {
             
             <div className="mt-4 flex gap-4">
               <a
-                href="https://twitch.tv/pongblaster"
+                href="https://twitch.tv/shelldonlive"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-purple-400 hover:text-purple-300"
