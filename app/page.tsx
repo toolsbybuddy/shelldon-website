@@ -23,7 +23,7 @@ export default function Home() {
             {/* Twitch Embed */}
             <div className="aspect-video bg-black rounded-lg overflow-hidden">
               <iframe
-                src="https://player.twitch.tv/?channel=pongblaster&parent=shelldon.live&parent=localhost&muted=false"
+                src="https://player.twitch.tv/?channel=pongblaster&parent=shelldon.live&parent=localhost&parent=shelldon-website.vercel.app&muted=false"
                 height="100%"
                 width="100%"
                 allowFullScreen={true}
