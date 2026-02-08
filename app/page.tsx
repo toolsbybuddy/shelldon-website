@@ -102,8 +102,14 @@ export default function Home() {
             </div>
 
             <p className="text-slate-300 mb-4">
-              Every donation helps upgrade Shelldon's habitat — from humble plumbing parts to a thriving ecosystem.
+              Every donation helps upgrade Shelldon's habitat — from humble plumbing parts to a thriving ecosystem. 
+              <strong> All donations are cumulative.</strong> Whether you give $1 or $100, every dollar gets us closer to the next upgrade milestone.
             </p>
+            
+            <div className="bg-slate-900/50 border border-blue-500/30 rounded p-3 mb-4 text-sm">
+              <strong className="text-blue-400">How it works:</strong> Donations accumulate toward milestone goals. 
+              $0-$100 unlocks Level 1, $100-$250 unlocks Level 2, and so on. Every contribution counts!
+            </div>
 
             <button className="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
               Donate via Ko-fi (Coming Soon)
