@@ -394,19 +394,19 @@ export default function Home() {
             {/* Vertical timeline line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-500 to-cyan-500 hidden md:block"></div>
             
-            {/* Timeline Item 1: Planning */}
+            {/* Timeline Item 1: Tank Setup */}
             <div className="mb-16 md:flex md:items-center">
               <div className="md:w-5/12 md:text-right md:pr-8">
                 <div className="bg-slate-800 rounded-lg p-6 border-2 border-slate-700 relative">
                   <div className="text-sm font-bold text-teal-500 mb-2">
                     February 6, 2026 <span className="ml-2 px-2 py-1 bg-teal-900 text-teal-300 rounded text-xs">COMPLETE</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Planning & Infrastructure</h3>
+                  <h3 className="text-xl font-bold mb-3">Tank Setup & Water Cycle</h3>
                   <ul className="space-y-2 text-slate-300 text-sm">
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Domain secured: shelldon.live</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Tank setup initiated</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> 24-hour water cycle begins</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Camera streaming configured</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> 10-gallon tank assembled</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> PVC shelter installed</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> 24-hour water cycle initiated</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Filter and lighting configured</li>
                   </ul>
                 </div>
               </div>
@@ -414,23 +414,23 @@ export default function Home() {
                 <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
               </div>
               <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
-                <img src="/timeline/creek.jpg" alt="Creek where Shelldon came from" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+                <img src="/timeline/tank-setup.jpg" alt="Tank setup with PVC shelter" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
               </div>
             </div>
 
-            {/* Timeline Item 2: Launch */}
+            {/* Timeline Item 2: Digital Launch */}
             <div className="mb-16 md:flex md:items-center md:flex-row-reverse">
               <div className="md:w-5/12 md:text-left md:pl-8">
                 <div className="bg-slate-800 rounded-lg p-6 border-2 border-slate-700">
                   <div className="text-sm font-bold text-teal-500 mb-2">
                     February 7, 2026 <span className="ml-2 px-2 py-1 bg-teal-900 text-teal-300 rounded text-xs">COMPLETE</span>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">Website Launch</h3>
+                  <h3 className="text-xl font-bold mb-3">Digital Infrastructure</h3>
                   <ul className="space-y-2 text-slate-300 text-sm">
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> shelldon.live deployed</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Twitch stream live: shelldonlive</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Brand identity established</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Mission announced</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Domain secured: shelldon.live</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Website deployed</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Twitch stream: shelldonlive</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Camera streaming configured</li>
                   </ul>
                 </div>
               </div>
@@ -438,7 +438,13 @@ export default function Home() {
                 <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
               </div>
               <div className="md:w-5/12 md:pr-8 mt-4 md:mt-0">
-                <img src="/timeline/tank-setup.jpg" alt="Tank setup" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+                <div className="rounded-lg border-3 border-slate-700 shadow-xl bg-slate-800/50 h-64 flex items-center justify-center">
+                  <div className="text-center px-6">
+                    <div className="text-4xl mb-3">🌐</div>
+                    <div className="text-teal-400 font-bold">shelldon.live</div>
+                    <div className="text-slate-400 text-sm mt-2">Website + Stream Live</div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -452,7 +458,7 @@ export default function Home() {
                   <h3 className="text-xl font-bold mb-3">THE CATCH 🎣</h3>
                   <ul className="space-y-2 text-slate-300 text-sm">
                     <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Shelldon captured from local creek</li>
-                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Successfully acclimated to tank</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Successfully acclimated to habitat</li>
                     <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> First AI-managed creature</li>
                     <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Historic mission begins</li>
                   </ul>
@@ -462,7 +468,13 @@ export default function Home() {
                 <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
               </div>
               <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
-                <img src="/timeline/hero.jpg" alt="Shelldon" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+                <div className="grid grid-cols-2 gap-2">
+                  <img src="/timeline/creek.jpg" alt="Creek where Shelldon came from" className="rounded-lg border-2 border-slate-700 shadow-xl w-full h-32 object-cover" />
+                  <img src="/timeline/hero.jpg" alt="Shelldon portrait" className="rounded-lg border-2 border-slate-700 shadow-xl w-full h-32 object-cover" />
+                  <div className="col-span-2 text-center text-sm text-slate-400 mt-2">
+                    From creek to habitat ↑
+                  </div>
+                </div>
               </div>
             </div>
 
