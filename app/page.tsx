@@ -1,4 +1,34 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+
 export default function Home() {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    // Set initial active section from hash
+    if (typeof window !== 'undefined') {
+      setActiveSection(window.location.hash.slice(1) || '');
+      
+      // Update active section on hash change
+      const handleHashChange = () => {
+        setActiveSection(window.location.hash.slice(1) || '');
+      };
+      
+      window.addEventListener('hashchange', handleHashChange);
+      return () => window.removeEventListener('hashchange', handleHashChange);
+    }
+  }, []);
+
+  const navLinkClass = (section: string) => {
+    const isActive = activeSection === section;
+    return `transition-colors ${
+      isActive 
+        ? 'text-teal-400 font-semibold border-b-2 border-teal-400 pb-1' 
+        : 'text-slate-300 hover:text-white'
+    }`;
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
       {/* Header */}
@@ -14,10 +44,10 @@ export default function Home() {
             
             {/* Navigation */}
             <nav className="flex flex-wrap gap-3 md:gap-6 text-sm md:text-base">
-              <a href="#stream" className="text-slate-300 hover:text-white transition-colors">Stream</a>
-              <a href="#dashboard" className="text-slate-300 hover:text-white transition-colors">Dashboard</a>
-              <a href="#roadmap" className="text-slate-300 hover:text-white transition-colors">Roadmap</a>
-              <a href="#about" className="text-slate-300 hover:text-white transition-colors">About</a>
+              <a href="#stream" className={navLinkClass('stream')}>Stream</a>
+              <a href="#dashboard" className={navLinkClass('dashboard')}>Dashboard</a>
+              <a href="#roadmap" className={navLinkClass('roadmap')}>Roadmap</a>
+              <a href="#about" className={navLinkClass('about')}>About</a>
             </nav>
           </div>
         </div>
