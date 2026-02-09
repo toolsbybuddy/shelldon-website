@@ -1,15 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Clean circle background -->
-  <circle cx="50" cy="50" r="50" fill="#0d9488"/>
+  <!-- Dark background circle -->
+  <circle cx="50" cy="50" r="50" fill="#0f172a"/>
   
-  <!-- Bold "S" for Shelldon -->
+  <!-- Bold copper S -->
   <text x="50" y="72" 
         font-family="Arial, sans-serif" 
         font-size="70" 
         font-weight="bold" 
-        fill="#ffffff" 
+        fill="#ea580c" 
         text-anchor="middle">S</text>
-  
-  <!-- Small claw accent in top right -->
-  <path d="M 70 25 Q 75 20, 80 25 L 75 30 Z" fill="#ea580c"/>
 </svg>
