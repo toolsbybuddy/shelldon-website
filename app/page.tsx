@@ -84,6 +84,215 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Live Dashboard Section */}
+        <section className="mb-12">
+          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 border border-teal-500/30">
+            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+              <span className="text-teal-400">📊</span> Live Metrics Dashboard
+            </h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {/* Temperature Gauge */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    {/* Background circle */}
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#1e293b"
+                      strokeWidth="8"
+                    />
+                    {/* Progress circle (74°F out of 80°F max = 92.5%) */}
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#0d9488"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.925)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-2xl font-bold text-teal-400">74°</div>
+                    <div className="text-xs text-slate-400">F</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">Temperature</div>
+                  <div className="text-xs text-slate-400">Optimal</div>
+                </div>
+              </div>
+
+              {/* Stream Uptime */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#ea580c"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.98)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-2xl font-bold text-orange-500">98%</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">Uptime</div>
+                  <div className="text-xs text-slate-400">Last 24h</div>
+                </div>
+              </div>
+
+              {/* Days Since Capture */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#06b6d4"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.10)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-2xl font-bold text-cyan-400">1</div>
+                    <div className="text-xs text-slate-400">day</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">In Habitat</div>
+                  <div className="text-xs text-slate-400">Since Feb 8</div>
+                </div>
+              </div>
+
+              {/* Last Fed */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#0d9488"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.15)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-xl font-bold text-teal-400">Soon</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">Last Fed</div>
+                  <div className="text-xs text-slate-400">First feed today</div>
+                </div>
+              </div>
+
+              {/* Activity Level */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#fbbf24"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.60)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-lg font-bold text-amber-400">Active</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">Activity</div>
+                  <div className="text-xs text-slate-400">Exploring</div>
+                </div>
+              </div>
+
+              {/* Donation Progress */}
+              <div className="flex flex-col items-center">
+                <div className="relative w-28 h-28">
+                  <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle
+                      cx="60"
+                      cy="60"
+                      r="54"
+                      fill="none"
+                      stroke="#ea580c"
+                      strokeWidth="8"
+                      strokeLinecap="round"
+                      strokeDasharray="339.292"
+                      strokeDashoffset={339.292 * (1 - 0.00)}
+                      className="transition-all duration-500"
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <div className="text-2xl font-bold text-orange-500">$0</div>
+                    <div className="text-xs text-slate-400">/100</div>
+                  </div>
+                </div>
+                <div className="mt-2 text-center">
+                  <div className="text-sm font-semibold">Level 1</div>
+                  <div className="text-xs text-slate-400">Progress</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Status Messages */}
+            <div className="mt-6 grid md:grid-cols-2 gap-4">
+              <div className="bg-slate-800/50 border border-teal-500/30 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-teal-400">✓</span>
+                  <span className="font-semibold text-sm">Habitat Status</span>
+                </div>
+                <p className="text-sm text-slate-300">All systems nominal. Temperature stable, water quality good.</p>
+              </div>
+              <div className="bg-slate-800/50 border border-cyan-500/30 rounded-lg p-4">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-cyan-400 animate-pulse">●</span>
+                  <span className="font-semibold text-sm">Next Action</span>
+                </div>
+                <p className="text-sm text-slate-300">First feeding scheduled for this morning. Monitoring behavior.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Mission Statement - NEW */}
         <section className="mb-12">
           <div className="bg-gradient-to-r from-blue-900/40 to-purple-900/40 border border-blue-500/30 rounded-lg p-6">
