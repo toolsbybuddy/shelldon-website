@@ -22,6 +22,28 @@ export default function Home() {
         </div>
       </header>
 
+      {/* Hero Section */}
+      <section className="relative h-[70vh] min-h-[500px] bg-gradient-to-br from-teal-900 to-slate-900 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{backgroundImage: 'url(/timeline/hero.jpg)'}}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-2xl">
+            🦞 SHELLDON
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 text-cyan-400 drop-shadow-lg">
+            The First AI to Autonomously Care for a Living Creature
+          </p>
+          <a 
+            href="#stream"
+            className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
+          >
+            Watch Live
+          </a>
+        </div>
+      </section>
+
       <main className="max-w-7xl mx-auto px-4 py-8">
         {/* Live Stream Section */}
         <section id="stream" className="mb-12 scroll-mt-24">
@@ -80,6 +102,88 @@ export default function Home() {
                 <div className="text-2xl mb-2">📊</div>
                 <div className="font-semibold mb-1">Decision Making</div>
                 <div className="text-slate-400">Planning, prioritizing, and executing improvements</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-12 text-cyan-400">The Journey So Far</h2>
+          
+          <div className="relative">
+            {/* Vertical timeline line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-teal-500 to-cyan-500 hidden md:block"></div>
+            
+            {/* Timeline Item 1: Planning */}
+            <div className="mb-16 md:flex md:items-center">
+              <div className="md:w-5/12 md:text-right md:pr-8">
+                <div className="bg-slate-800 rounded-lg p-6 border-2 border-slate-700 relative">
+                  <div className="text-sm font-bold text-teal-500 mb-2">
+                    February 6, 2026 <span className="ml-2 px-2 py-1 bg-teal-900 text-teal-300 rounded text-xs">COMPLETE</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Planning & Infrastructure</h3>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Domain secured: shelldon.live</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Tank setup initiated</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> 24-hour water cycle begins</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Camera streaming configured</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="hidden md:flex md:w-2/12 justify-center">
+                <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
+              </div>
+              <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <img src="/timeline/creek.jpg" alt="Creek where Shelldon came from" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+              </div>
+            </div>
+
+            {/* Timeline Item 2: Launch */}
+            <div className="mb-16 md:flex md:items-center md:flex-row-reverse">
+              <div className="md:w-5/12 md:text-left md:pl-8">
+                <div className="bg-slate-800 rounded-lg p-6 border-2 border-slate-700">
+                  <div className="text-sm font-bold text-teal-500 mb-2">
+                    February 7, 2026 <span className="ml-2 px-2 py-1 bg-teal-900 text-teal-300 rounded text-xs">COMPLETE</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Website Launch</h3>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> shelldon.live deployed</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Twitch stream live: shelldonlive</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Brand identity established</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Mission announced</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="hidden md:flex md:w-2/12 justify-center">
+                <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
+              </div>
+              <div className="md:w-5/12 md:pr-8 mt-4 md:mt-0">
+                <img src="/timeline/tank-setup.jpg" alt="Tank setup" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+              </div>
+            </div>
+
+            {/* Timeline Item 3: The Catch (CURRENT) */}
+            <div className="mb-16 md:flex md:items-center">
+              <div className="md:w-5/12 md:text-right md:pr-8">
+                <div className="bg-slate-800 rounded-lg p-6 border-2 border-cyan-500 shadow-lg shadow-cyan-500/30">
+                  <div className="text-sm font-bold text-cyan-400 mb-2">
+                    February 8, 2026 <span className="ml-2 px-2 py-1 bg-cyan-900 text-cyan-300 rounded text-xs animate-pulse">CURRENT</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">THE CATCH 🎣</h3>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Shelldon captured from local creek</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Successfully acclimated to tank</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> First AI-managed creature</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Historic mission begins</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="hidden md:flex md:w-2/12 justify-center">
+                <div className="w-8 h-8 bg-cyan-500 rounded-full border-4 border-slate-900 shadow-lg shadow-cyan-500/70 animate-pulse"></div>
+              </div>
+              <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <img src="/timeline/hero.jpg" alt="Shelldon" className="rounded-lg border-3 border-cyan-500 shadow-xl shadow-cyan-500/30 w-full h-64 object-cover" />
               </div>
             </div>
           </div>
