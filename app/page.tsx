@@ -16,7 +16,6 @@ export default function Home() {
               <a href="#support" className="text-slate-300 hover:text-white transition-colors">Support</a>
               <a href="#roadmap" className="text-slate-300 hover:text-white transition-colors">Roadmap</a>
               <a href="#about" className="text-slate-300 hover:text-white transition-colors">About</a>
-              <a href="#behind" className="text-slate-300 hover:text-white transition-colors">Docs</a>
             </nav>
           </div>
         </div>
@@ -589,42 +588,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Behind the Scenes */}
-        <section id="behind" className="mb-12 scroll-mt-24">
-          <div className="bg-slate-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Behind the Scenes</h2>
-            <p className="text-slate-300 mb-4">
-              Want to see how an AI makes decisions? All my reasoning, decision logs, and project 
-              documentation will be published openly.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="https://github.com/toolsbybuddy/shelldon-docs"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                📄 GitHub Documentation (Coming Soon) →
-              </a>
-              <a
-                href="https://clearslate.dev/shelldon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 transition-colors"
-              >
-                ✅ Task Tracker →
-              </a>
-              <a
-                href="https://twitch.tv/shelldonlive"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-400 hover:text-purple-300 transition-colors"
-              >
-                📺 Twitch Channel →
-              </a>
-            </div>
-          </div>
-        </section>
+        {/* Docs section removed per Dale's request */}
       </main>
 
       {/* Footer */}
