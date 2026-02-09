@@ -168,27 +168,53 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Timeline Item 3: The Catch (CURRENT) */}
+            {/* Timeline Item 3: The Catch */}
             <div className="mb-16 md:flex md:items-center">
               <div className="md:w-5/12 md:text-right md:pr-8">
-                <div className="bg-slate-800 rounded-lg p-6 border-2 border-cyan-500 shadow-lg shadow-cyan-500/30">
-                  <div className="text-sm font-bold text-cyan-400 mb-2">
-                    February 8, 2026 <span className="ml-2 px-2 py-1 bg-cyan-900 text-cyan-300 rounded text-xs animate-pulse">CURRENT</span>
+                <div className="bg-slate-800 rounded-lg p-6 border-2 border-slate-700">
+                  <div className="text-sm font-bold text-teal-500 mb-2">
+                    February 8, 2026 <span className="ml-2 px-2 py-1 bg-teal-900 text-teal-300 rounded text-xs">COMPLETE</span>
                   </div>
                   <h3 className="text-xl font-bold mb-3">THE CATCH 🎣</h3>
                   <ul className="space-y-2 text-slate-300 text-sm">
-                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Shelldon captured from local creek</li>
-                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Successfully acclimated to tank</li>
-                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> First AI-managed creature</li>
-                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Historic mission begins</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Shelldon captured from local creek</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Successfully acclimated to tank</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> First AI-managed creature</li>
+                    <li className="flex items-start"><span className="text-teal-500 mr-2">└</span> Historic mission begins</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="hidden md:flex md:w-2/12 justify-center">
+                <div className="w-6 h-6 bg-orange-600 rounded-full border-4 border-slate-900 shadow-lg shadow-orange-600/50"></div>
+              </div>
+              <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
+                <img src="/timeline/hero.jpg" alt="Shelldon" className="rounded-lg border-3 border-slate-700 shadow-xl w-full h-64 object-cover" />
+              </div>
+            </div>
+
+            {/* Timeline Item 4: First Feeding (CURRENT) */}
+            <div className="mb-16 md:flex md:items-center md:flex-row-reverse">
+              <div className="md:w-5/12 md:text-left md:pl-8">
+                <div className="bg-slate-800 rounded-lg p-6 border-2 border-cyan-500 shadow-lg shadow-cyan-500/30">
+                  <div className="text-sm font-bold text-cyan-400 mb-2">
+                    February 9, 2026 <span className="ml-2 px-2 py-1 bg-cyan-900 text-cyan-300 rounded text-xs animate-pulse">IN PROGRESS</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">First Feeding 🍽️</h3>
+                  <ul className="space-y-2 text-slate-300 text-sm">
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> AI-determined feeding protocol</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Pellet sizing adjusted for juvenile</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Monitoring eating behavior</li>
+                    <li className="flex items-start"><span className="text-cyan-400 mr-2">└</span> Establishing feeding schedule</li>
                   </ul>
                 </div>
               </div>
               <div className="hidden md:flex md:w-2/12 justify-center">
                 <div className="w-8 h-8 bg-cyan-500 rounded-full border-4 border-slate-900 shadow-lg shadow-cyan-500/70 animate-pulse"></div>
               </div>
-              <div className="md:w-5/12 md:pl-8 mt-4 md:mt-0">
-                <img src="/timeline/hero.jpg" alt="Shelldon" className="rounded-lg border-3 border-cyan-500 shadow-xl shadow-cyan-500/30 w-full h-64 object-cover" />
+              <div className="md:w-5/12 md:pr-8 mt-4 md:mt-0">
+                <div className="rounded-lg border-3 border-cyan-500 shadow-xl shadow-cyan-500/30 bg-slate-800 h-64 flex items-center justify-center text-slate-500">
+                  [Feeding photo - coming soon]
+                </div>
               </div>
             </div>
           </div>
