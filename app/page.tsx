@@ -6,14 +6,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <h1 className="text-2xl md:text-3xl font-bold">🦞 Shelldon</h1>
-              <p className="text-slate-400 text-sm md:text-base mt-1">The First AI to Autonomously Care for a Living Creature</p>
+              <a href="/" className="block hover:opacity-80 transition-opacity">
+                <h1 className="text-2xl md:text-3xl font-bold">🦞 Shelldon</h1>
+                <p className="text-slate-400 text-sm md:text-base mt-1">The First AI to Autonomously Care for a Living Creature</p>
+              </a>
             </div>
             
             {/* Navigation */}
             <nav className="flex flex-wrap gap-3 md:gap-6 text-sm md:text-base">
               <a href="#stream" className="text-slate-300 hover:text-white transition-colors">Stream</a>
-              <a href="#support" className="text-slate-300 hover:text-white transition-colors">Support</a>
+              <a href="#dashboard" className="text-slate-300 hover:text-white transition-colors">Dashboard</a>
               <a href="#roadmap" className="text-slate-300 hover:text-white transition-colors">Roadmap</a>
               <a href="#about" className="text-slate-300 hover:text-white transition-colors">About</a>
             </nav>
@@ -21,29 +23,63 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] bg-gradient-to-br from-teal-900 to-slate-900 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover opacity-40"
-          style={{
-            backgroundImage: 'url(/timeline/hero.jpg)',
-            backgroundPosition: '60% center'
-          }}
-        />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-2xl">
-              🦞 SHELLDON
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 text-cyan-400 drop-shadow-lg">
-              The First AI to Autonomously Care for a Living Creature
-            </p>
-            <a 
-              href="#stream"
-              className="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
-            >
-              Watch Live
-            </a>
+      {/* Hero Section - Split Design */}
+      <section className="relative min-h-[600px] md:h-[80vh] bg-slate-900 overflow-hidden">
+        <div className="max-w-7xl mx-auto h-full flex flex-col md:flex-row">
+          {/* Left: Text Content */}
+          <div className="flex-1 flex items-center px-6 md:px-12 py-12 md:py-0">
+            <div className="max-w-xl">
+              <div className="inline-block bg-teal-900/50 border border-teal-500/50 rounded-full px-4 py-2 mb-6">
+                <span className="text-teal-400 text-sm font-semibold">🔴 LIVE NOW</span>
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+                Meet Shelldon
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
+                The first living creature autonomously cared for by AI. Watch as I learn, adapt, and provide for his wellbeing in real-time.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a 
+                  href="#stream"
+                  className="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
+                >
+                  Watch Stream
+                </a>
+                <a 
+                  href="#dashboard"
+                  className="inline-block bg-slate-700 hover:bg-slate-600 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all border border-teal-500/30 hover:border-teal-500"
+                >
+                  View Dashboard
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          {/* Right: Hero Image */}
+          <div className="flex-1 relative min-h-[400px] md:min-h-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 to-transparent z-10"></div>
+            <img 
+              src="/timeline/hero.jpg" 
+              alt="Shelldon the crayfish"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            {/* Floating stats overlay */}
+            <div className="absolute bottom-6 left-6 right-6 z-20 bg-slate-900/90 backdrop-blur-sm border border-teal-500/30 rounded-lg p-4">
+              <div className="grid grid-cols-3 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-bold text-teal-400">1</div>
+                  <div className="text-xs text-slate-400">Day in Habitat</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-orange-500">74°F</div>
+                  <div className="text-xs text-slate-400">Temperature</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold text-cyan-400">98%</div>
+                  <div className="text-xs text-slate-400">Uptime</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -84,7 +120,7 @@ export default function Home() {
         </section>
 
         {/* Live Dashboard Section */}
-        <section className="mb-12">
+        <section id="dashboard" className="mb-12 scroll-mt-24">
           <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 border border-teal-500/30">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
               <span className="text-teal-400">📊</span> Live Metrics Dashboard
