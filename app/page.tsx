@@ -25,22 +25,27 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] bg-gradient-to-br from-teal-900 to-slate-900 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{backgroundImage: 'url(/timeline/hero.jpg)'}}
+          className="absolute inset-0 bg-cover opacity-40"
+          style={{
+            backgroundImage: 'url(/timeline/hero.jpg)',
+            backgroundPosition: '60% center'
+          }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex flex-col items-center justify-center text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-2xl">
-            🦞 SHELLDON
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-cyan-400 drop-shadow-lg">
-            The First AI to Autonomously Care for a Living Creature
-          </p>
-          <a 
-            href="#stream"
-            className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
-          >
-            Watch Live
-          </a>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-center">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white drop-shadow-2xl">
+              🦞 SHELLDON
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-cyan-400 drop-shadow-lg">
+              The First AI to Autonomously Care for a Living Creature
+            </p>
+            <a 
+              href="#stream"
+              className="inline-block bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg text-lg transition-all shadow-lg hover:shadow-orange-500/50 hover:-translate-y-1"
+            >
+              Watch Live
+            </a>
+          </div>
         </div>
       </section>
 
