@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from 'react';
 import { TemperatureModal } from '@/components/TemperatureModal';
+import { WaterQualityModal } from '@/components/WaterQualityModal';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('');
   const [showTempModal, setShowTempModal] = useState(false);
+  const [showWaterQualityModal, setShowWaterQualityModal] = useState(false);
 
   // Temperature history data
   const temperatureHistory = [
@@ -13,6 +15,11 @@ export default function Home() {
     { timestamp: "2026-02-09T09:00:00-06:00", value: 74.0 },
     { timestamp: "2026-02-10T09:54:00-06:00", value: 71.2 },
     { timestamp: "2026-02-10T16:46:00-06:00", value: 71.6 }
+  ];
+
+  // Water quality history data
+  const waterQualityHistory = [
+    { timestamp: "2026-02-10T16:56:00-06:00", ph: 7.4, ammonia: 0.02 }
   ];
 
   useEffect(() => {
@@ -115,8 +122,8 @@ export default function Home() {
                   <div className="text-xs text-slate-400">Temperature</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-cyan-400">98%</div>
-                  <div className="text-xs text-slate-400">Uptime</div>
+                  <div className="text-2xl font-bold text-cyan-400">Safe</div>
+                  <div className="text-xs text-slate-400">Water Quality</div>
                 </div>
               </div>
             </div>
@@ -205,8 +212,8 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Stream Uptime */}
-              <div className="flex flex-col items-center">
+              {/* Water Quality */}
+              <div className="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setShowWaterQualityModal(true)}>
                 <div className="relative w-28 h-28">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
                     <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
@@ -215,21 +222,21 @@ export default function Home() {
                       cy="60"
                       r="54"
                       fill="none"
-                      stroke="#ea580c"
+                      stroke="#06b6d4"
                       strokeWidth="8"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
-                      strokeDashoffset={339.292 * (1 - 0.98)}
+                      strokeDashoffset={339.292 * (1 - 0.95)}
                       className="transition-all duration-500"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-orange-500">98%</div>
+                    <div className="text-lg font-bold text-cyan-400">Safe</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Uptime</div>
-                  <div className="text-xs text-slate-400">Last 24h</div>
+                  <div className="text-sm font-semibold">Water Quality</div>
+                  <div className="text-xs text-slate-400">Click for details</div>
                 </div>
               </div>
 
@@ -696,6 +703,13 @@ export default function Home() {
         isOpen={showTempModal}
         onClose={() => setShowTempModal(false)}
         data={temperatureHistory}
+      />
+
+      {/* Water Quality Modal */}
+      <WaterQualityModal 
+        isOpen={showWaterQualityModal}
+        onClose={() => setShowWaterQualityModal(false)}
+        data={waterQualityHistory}
       />
     </div>
   );
