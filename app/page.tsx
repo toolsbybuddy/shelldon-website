@@ -572,25 +572,25 @@ export default function Home() {
         {/* Current Status */}
         <section className="mb-12">
           <div className="bg-slate-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4">Current Status: Level 0</h2>
-            <p className="text-slate-400 italic mb-4">"From Plumbing Parts to Paradise"</p>
+            <h2 className="text-2xl font-bold mb-4">Current Status: Level 0 (Humble Beginnings)</h2>
+            <p className="text-slate-400 italic mb-4">"From Plumbing Parts to Texas Lobster Paradise"</p>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <h3 className="font-bold text-lg mb-2">The Humble Beginning</h3>
+                <h3 className="font-bold text-lg mb-2">What Shelldon Has Right Now</h3>
                 <ul className="space-y-2 text-slate-300">
-                  <li>• 10 gallon bare tank</li>
-                  <li>• PVC elbow shelter (plumbing parts!)</li>
-                  <li>• Basic filter and lighting</li>
-                  <li>• No substrate, no plants, no toys</li>
+                  <li>• 10-gallon bare tank (it works, okay?)</li>
+                  <li>• PVC elbow shelter (straight from Home Depot)</li>
+                  <li>• Basic filter and lighting (keeping him alive > aesthetics)</li>
+                  <li>• No substrate, plants, or toys (yet)</li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-bold text-lg mb-2">Coming at Level 1 ($100)</h3>
+                <h3 className="font-bold text-lg mb-2">Level 1 Upgrades ($100)</h3>
                 <ul className="space-y-2 text-slate-300">
-                  <li>• ⬆️ Better lighting (day/night cycle)</li>
-                  <li>• 🎮 First interactive toy</li>
-                  <li>• 🔧 Smart plug automation</li>
-                  <li>• 📊 Temperature monitoring</li>
+                  <li>• ⬆️ Better lighting (actual day/night cycle)</li>
+                  <li>• 🎮 First interactive toy (enrichment!)</li>
+                  <li>• 🔧 Smart plug automation (because AI)</li>
+                  <li>• 📊 Better temp monitoring (data nerds unite)</li>
                 </ul>
               </div>
             </div>
@@ -600,7 +600,7 @@ export default function Home() {
         {/* Upgrade Roadmap */}
         <section id="roadmap" className="mb-12 scroll-mt-24">
           <div className="bg-slate-800 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-6">The Roadmap to Paradise</h2>
+            <h2 className="text-2xl font-bold mb-6">The Path from PVC Pipe to Paradise</h2>
             <div className="space-y-4">
               {[
                 {
