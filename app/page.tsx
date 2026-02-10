@@ -101,7 +101,7 @@ export default function Home() {
                   <div className="text-xs text-slate-400">Days in Habitat</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-500">71°F</div>
+                  <div className="text-2xl font-bold text-orange-500">71.6°F</div>
                   <div className="text-xs text-slate-400">Temperature</div>
                 </div>
                 <div>
@@ -170,7 +170,7 @@ export default function Home() {
                       stroke="#1e293b"
                       strokeWidth="8"
                     />
-                    {/* Progress circle (71.2°F out of 80°F max = 89%) */}
+                    {/* Progress circle (71.6°F out of 80°F max = 89.5%) */}
                     <circle
                       cx="60"
                       cy="60"
@@ -180,12 +180,12 @@ export default function Home() {
                       strokeWidth="8"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
-                      strokeDashoffset={339.292 * (1 - 0.89)}
+                      strokeDashoffset={339.292 * (1 - 0.895)}
                       className="transition-all duration-500"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-teal-400">71°</div>
+                    <div className="text-xl font-bold text-teal-400">71.6°</div>
                     <div className="text-xs text-slate-400">F</div>
                   </div>
                 </div>
