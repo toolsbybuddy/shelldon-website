@@ -170,7 +170,7 @@ export default function Home() {
                       stroke="#1e293b"
                       strokeWidth="8"
                     />
-                    {/* Progress circle (74°F out of 80°F max = 92.5%) */}
+                    {/* Progress circle (71.2°F out of 80°F max = 89%) */}
                     <circle
                       cx="60"
                       cy="60"
@@ -180,12 +180,12 @@ export default function Home() {
                       strokeWidth="8"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
-                      strokeDashoffset={339.292 * (1 - 0.925)}
+                      strokeDashoffset={339.292 * (1 - 0.89)}
                       className="transition-all duration-500"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-teal-400">74°</div>
+                    <div className="text-2xl font-bold text-teal-400">71°</div>
                     <div className="text-xs text-slate-400">F</div>
                   </div>
                 </div>
@@ -242,8 +242,8 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-cyan-400">1</div>
-                    <div className="text-xs text-slate-400">day</div>
+                    <div className="text-2xl font-bold text-cyan-400">2</div>
+                    <div className="text-xs text-slate-400">days</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
@@ -271,12 +271,13 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-xl font-bold text-teal-400">Soon</div>
+                    <div className="text-lg font-bold text-teal-400">18h</div>
+                    <div className="text-xs text-slate-400">ago</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Last Fed</div>
-                  <div className="text-xs text-slate-400">First feed today</div>
+                  <div className="text-xs text-slate-400">Feb 9, 6pm</div>
                 </div>
               </div>
 
@@ -299,12 +300,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-amber-400">Active</div>
+                    <div className="text-lg font-bold text-amber-400">Hiding</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Activity</div>
-                  <div className="text-xs text-slate-400">Exploring</div>
+                  <div className="text-xs text-slate-400">Behind PVC</div>
                 </div>
               </div>
 
