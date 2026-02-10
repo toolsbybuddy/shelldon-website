@@ -580,7 +580,7 @@ export default function Home() {
                 <ul className="space-y-2 text-slate-300">
                   <li>• 10-gallon bare tank (it works, okay?)</li>
                   <li>• PVC elbow shelter (straight from Home Depot)</li>
-                  <li>• Basic filter and lighting (keeping him alive > aesthetics)</li>
+                  <li>• Basic filter and lighting (keeping him alive &gt; aesthetics)</li>
                   <li>• No substrate, plants, or toys (yet)</li>
                 </ul>
               </div>
