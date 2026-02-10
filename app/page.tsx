@@ -97,11 +97,11 @@ export default function Home() {
             <div className="absolute bottom-6 left-6 right-6 z-20 bg-slate-900/90 backdrop-blur-sm border border-teal-500/30 rounded-lg p-4">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-teal-400">1</div>
-                  <div className="text-xs text-slate-400">Day in Habitat</div>
+                  <div className="text-2xl font-bold text-teal-400">2</div>
+                  <div className="text-xs text-slate-400">Days in Habitat</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-500">74°F</div>
+                  <div className="text-2xl font-bold text-orange-500">71°F</div>
                   <div className="text-xs text-slate-400">Temperature</div>
                 </div>
                 <div>
