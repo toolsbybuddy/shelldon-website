@@ -271,12 +271,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-sm font-bold text-orange-400">Pending</div>
+                    <div className="text-lg font-bold text-teal-400">Now!</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Last Fed</div>
-                  <div className="text-xs text-slate-400">Awaiting pellets</div>
+                  <div className="text-xs text-slate-400">Feb 10, 4:42pm</div>
                 </div>
               </div>
 
@@ -299,12 +299,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-amber-400">Exploring</div>
+                    <div className="text-lg font-bold text-green-400">Eating!</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Activity</div>
-                  <div className="text-xs text-slate-400">Near shelter</div>
+                  <div className="text-xs text-slate-400">Actively feeding</div>
                 </div>
               </div>
 
@@ -347,12 +347,12 @@ export default function Home() {
                 </div>
                 <p className="text-sm text-slate-300">All systems nominal. Temperature stable, water quality good.</p>
               </div>
-              <div className="bg-slate-800/50 border border-cyan-500/30 rounded-lg p-4">
+              <div className="bg-slate-800/50 border border-green-500/30 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-cyan-400 animate-pulse">●</span>
-                  <span className="font-semibold text-sm">Next Action</span>
+                  <span className="text-green-400">✓</span>
+                  <span className="font-semibold text-sm">Latest Update</span>
                 </div>
-                <p className="text-sm text-slate-300">First feeding scheduled for this morning. Monitoring behavior.</p>
+                <p className="text-sm text-slate-300">🎉 First confirmed feeding! Shelldon ran to Hikari pellets and ate immediately (5 pellets, 4:42pm).</p>
               </div>
             </div>
           </div>
