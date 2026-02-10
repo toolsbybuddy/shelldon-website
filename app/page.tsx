@@ -271,13 +271,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-teal-400">18h</div>
-                    <div className="text-xs text-slate-400">ago</div>
+                    <div className="text-sm font-bold text-orange-400">Pending</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Last Fed</div>
-                  <div className="text-xs text-slate-400">Feb 9, 6pm</div>
+                  <div className="text-xs text-slate-400">Awaiting pellets</div>
                 </div>
               </div>
 
@@ -300,12 +299,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-amber-400">Hiding</div>
+                    <div className="text-lg font-bold text-amber-400">Exploring</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Activity</div>
-                  <div className="text-xs text-slate-400">Behind PVC</div>
+                  <div className="text-xs text-slate-400">Near shelter</div>
                 </div>
               </div>
 
