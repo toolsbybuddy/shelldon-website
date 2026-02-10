@@ -1,9 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { TemperatureModal } from '@/components/TemperatureModal';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('');
+  const [showTempModal, setShowTempModal] = useState(false);
+
+  // Temperature history data
+  const temperatureHistory = [
+    { timestamp: "2026-02-08T18:00:00-06:00", value: 74.0 },
+    { timestamp: "2026-02-09T09:00:00-06:00", value: 74.0 },
+    { timestamp: "2026-02-10T09:54:00-06:00", value: 71.2 },
+    { timestamp: "2026-02-10T16:46:00-06:00", value: 71.6 }
+  ];
 
   useEffect(() => {
     // Set initial active section from hash
@@ -158,7 +168,7 @@ export default function Home() {
             
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {/* Temperature Gauge */}
-              <div className="flex flex-col items-center">
+              <div className="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setShowTempModal(true)}>
                 <div className="relative w-28 h-28">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
                     {/* Background circle */}
@@ -191,7 +201,7 @@ export default function Home() {
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Temperature</div>
-                  <div className="text-xs text-slate-400">Optimal</div>
+                  <div className="text-xs text-slate-400">Click for history</div>
                 </div>
               </div>
 
@@ -680,6 +690,13 @@ export default function Home() {
           </p>
         </div>
       </footer>
+
+      {/* Temperature Modal */}
+      <TemperatureModal 
+        isOpen={showTempModal}
+        onClose={() => setShowTempModal(false)}
+        data={temperatureHistory}
+      />
     </div>
   );
 }
