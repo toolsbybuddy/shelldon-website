@@ -4,23 +4,56 @@ import { useEffect, useState } from 'react';
 import { TemperatureModal } from '@/components/TemperatureModal';
 import { WaterQualityModal } from '@/components/WaterQualityModal';
 
+interface DashboardData {
+  lastUpdated: string;
+  temperature: {
+    current: number;
+    unit: string;
+    status: string;
+    history: Array<{ timestamp: string; value: number }>;
+  };
+  daysInHabitat: {
+    current: number;
+    captureDate: string;
+  };
+  lastFed: {
+    timestamp: string;
+    hoursAgo: number;
+    food: string;
+    amount: string;
+    response: string;
+  };
+  activity: {
+    current: string;
+    location: string;
+    notes: string;
+  };
+  waterQuality: {
+    ph: number;
+    ammonia: number;
+    status: string;
+    history: Array<{ timestamp: string; ph: number; ammonia: number }>;
+  };
+  donationProgress: {
+    current: number;
+    goal: number;
+    percentage: number;
+  };
+}
+
 export default function Home() {
   const [activeSection, setActiveSection] = useState('');
   const [showTempModal, setShowTempModal] = useState(false);
   const [showWaterQualityModal, setShowWaterQualityModal] = useState(false);
+  const [dashboardData, setDashboardData] = useState<DashboardData | null>(null);
 
-  // Temperature history data
-  const temperatureHistory = [
-    { timestamp: "2026-02-08T18:00:00-06:00", value: 74.0 },
-    { timestamp: "2026-02-09T09:00:00-06:00", value: 74.0 },
-    { timestamp: "2026-02-10T09:54:00-06:00", value: 71.2 },
-    { timestamp: "2026-02-10T16:46:00-06:00", value: 71.6 }
-  ];
-
-  // Water quality history data
-  const waterQualityHistory = [
-    { timestamp: "2026-02-10T16:56:00-06:00", ph: 7.4, ammonia: 0.02 }
-  ];
+  // Load dashboard data
+  useEffect(() => {
+    fetch('/dashboard-data.json')
+      .then(res => res.json())
+      .then(data => setDashboardData(data))
+      .catch(err => console.error('Failed to load dashboard data:', err));
+  }, []);
 
   useEffect(() => {
     // Set initial active section from hash
@@ -36,6 +69,14 @@ export default function Home() {
       return () => window.removeEventListener('hashchange', handleHashChange);
     }
   }, []);
+
+  // Extract data with fallbacks
+  const temperatureHistory = dashboardData?.temperature.history || [];
+  const waterQualityHistory = dashboardData?.waterQuality.history || [];
+  const currentTemp = dashboardData?.temperature.current || 71;
+  const daysInHabitat = dashboardData?.daysInHabitat.current || 2;
+  const waterQualityStatus = dashboardData?.waterQuality.status || 'Safe';
+  const activityStatus = dashboardData?.activity.current || 'Active';
 
   const navLinkClass = (section: string) => {
     const isActive = activeSection === section;
@@ -117,15 +158,15 @@ export default function Home() {
             <div className="absolute bottom-6 left-6 right-6 z-20 bg-slate-900/90 backdrop-blur-sm border border-teal-500/30 rounded-lg p-4">
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <div className="text-2xl font-bold text-teal-400">2</div>
+                  <div className="text-2xl font-bold text-teal-400">{daysInHabitat}</div>
                   <div className="text-xs text-slate-400">Days in Habitat</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-orange-500">71.6°F</div>
+                  <div className="text-2xl font-bold text-orange-500">{currentTemp}°F</div>
                   <div className="text-xs text-slate-400">Temperature</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-bold text-cyan-400">Safe</div>
+                  <div className="text-2xl font-bold text-cyan-400">{waterQualityStatus}</div>
                   <div className="text-xs text-slate-400">Water Quality</div>
                 </div>
               </div>
@@ -205,7 +246,7 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-xl font-bold text-teal-400">71.6°</div>
+                    <div className="text-xl font-bold text-teal-400">{currentTemp}°</div>
                     <div className="text-xs text-slate-400">F</div>
                   </div>
                 </div>
@@ -234,7 +275,7 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-cyan-400">Safe</div>
+                    <div className="text-lg font-bold text-cyan-400">{waterQualityStatus}</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
@@ -262,13 +303,13 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-cyan-400">2</div>
+                    <div className="text-2xl font-bold text-cyan-400">{daysInHabitat}</div>
                     <div className="text-xs text-slate-400">days</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">In Habitat</div>
-                  <div className="text-xs text-slate-400">Since Feb 8</div>
+                  <div className="text-xs text-slate-400">Since {dashboardData?.daysInHabitat.captureDate || 'Feb 8'}</div>
                 </div>
               </div>
 
@@ -291,12 +332,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-teal-400">Now!</div>
+                    <div className="text-lg font-bold text-teal-400">{dashboardData?.lastFed.hoursAgo === 0 ? 'Now!' : `${dashboardData?.lastFed.hoursAgo}h ago`}</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Last Fed</div>
-                  <div className="text-xs text-slate-400">Feb 10, 4:42pm</div>
+                  <div className="text-xs text-slate-400">{dashboardData?.lastFed.amount || 'Feeding data'}</div>
                 </div>
               </div>
 
@@ -319,12 +360,12 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-green-400">Eating!</div>
+                    <div className="text-lg font-bold text-green-400">{activityStatus}</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
                   <div className="text-sm font-semibold">Activity</div>
-                  <div className="text-xs text-slate-400">Actively feeding</div>
+                  <div className="text-xs text-slate-400">{dashboardData?.activity.location || 'Current status'}</div>
                 </div>
               </div>
 
@@ -342,13 +383,13 @@ export default function Home() {
                       strokeWidth="8"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
-                      strokeDashoffset={339.292 * (1 - 0.00)}
+                      strokeDashoffset={339.292 * (1 - (dashboardData?.donationProgress.percentage || 0) / 100)}
                       className="transition-all duration-500"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-orange-500">$0</div>
-                    <div className="text-xs text-slate-400">/100</div>
+                    <div className="text-2xl font-bold text-orange-500">${dashboardData?.donationProgress.current || 0}</div>
+                    <div className="text-xs text-slate-400">/{dashboardData?.donationProgress.goal || 100}</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
@@ -365,14 +406,22 @@ export default function Home() {
                   <span className="text-teal-400">✓</span>
                   <span className="font-semibold text-sm">Habitat Status</span>
                 </div>
-                <p className="text-sm text-slate-300">Shelldon's vibing. Water quality: safe. Temperature: cozy 71.6°F. Currently hiding behind the PVC pipe like a tiny, suspicious Texas Lobster. Classic Shelldon.</p>
+                <p className="text-sm text-slate-300">
+                  Shelldon's vibing. Water quality: {waterQualityStatus.toLowerCase()}. 
+                  Temperature: cozy {currentTemp}°F. 
+                  {dashboardData?.activity.notes || 'Currently hiding behind the PVC pipe like a tiny, suspicious Texas Lobster. Classic Shelldon.'}
+                </p>
               </div>
               <div className="bg-slate-800/50 border border-green-500/30 rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-green-400">🦞</span>
                   <span className="font-semibold text-sm">Latest Update</span>
                 </div>
-                <p className="text-sm text-slate-300">🎉 FEEDING BREAKTHROUGH! Shelldon sprinted (yes, sprinted) to his food and demolished it. Turns out sinking pellets &gt; floating shrimp. Who knew? Everyone but me, apparently.</p>
+                <p className="text-sm text-slate-300">
+                  {dashboardData?.lastFed.response 
+                    ? `Latest feeding: ${dashboardData.lastFed.response}. ${dashboardData.lastFed.amount} of ${dashboardData.lastFed.food}.`
+                    : '🎉 FEEDING BREAKTHROUGH! Shelldon sprinted (yes, sprinted) to his food and demolished it. Turns out sinking pellets > floating shrimp. Who knew? Everyone but me, apparently.'}
+                </p>
               </div>
             </div>
           </div>

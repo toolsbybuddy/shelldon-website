@@ -1,0 +1,67 @@
+{
+  "lastUpdated": "2026-02-11T07:15:00-06:00",
+  "temperature": {
+    "current": 70.6,
+    "unit": "F",
+    "status": "Good",
+    "history": [
+      { "timestamp": "2026-02-08T18:00:00-06:00", "value": 74.0 },
+      { "timestamp": "2026-02-09T09:00:00-06:00", "value": 74.0 },
+      { "timestamp": "2026-02-10T09:54:00-06:00", "value": 71.2 },
+      { "timestamp": "2026-02-10T16:46:00-06:00", "value": 71.6 },
+      { "timestamp": "2026-02-11T07:15:00-06:00", "value": 70.6 }
+    ]
+  },
+  "daysInHabitat": {
+    "current": 3,
+    "captureDate": "2026-02-08"
+  },
+  "lastFed": {
+    "timestamp": "2026-02-11T07:15:00-06:00",
+    "hoursAgo": 0,
+    "food": "Hikari Crab Cuisine",
+    "amount": "6 pellets",
+    "response": "Excellent - gobbled down immediately",
+    "feedingHistory": [
+      { 
+        "timestamp": "2026-02-09T18:00:00-06:00", 
+        "food": "Sinking pellets (brand unknown)", 
+        "amount": "2-3 pellets", 
+        "response": "Not directly observed, likely consumed overnight" 
+      },
+      { 
+        "timestamp": "2026-02-10T16:42:00-06:00", 
+        "food": "Hikari Crab Cuisine", 
+        "amount": "5 pellets", 
+        "response": "CONFIRMED - ran to food, ate immediately",
+        "notes": "Video captured by Dale, first confirmed feeding"
+      },
+      { 
+        "timestamp": "2026-02-11T07:15:00-06:00", 
+        "food": "Hikari Crab Cuisine", 
+        "amount": "6 pellets", 
+        "response": "Gobbled down immediately - excellent appetite",
+        "notes": "Morning feeding, strong response"
+      }
+    ]
+  },
+  "activity": {
+    "current": "Active and feeding well",
+    "location": "Tank floor - ate 6 pellets immediately",
+    "notes": "Strong appetite, healthy response to food. Visible poop indicates good digestion."
+  },
+  "waterQuality": {
+    "ph": 7.8,
+    "ammonia": 0.02,
+    "status": "Safe",
+    "history": [
+      { "timestamp": "2026-02-10T16:56:00-06:00", "ph": 7.4, "ammonia": 0.02 },
+      { "timestamp": "2026-02-11T07:15:00-06:00", "ph": 7.8, "ammonia": 0.02 }
+    ]
+  },
+  "donationProgress": {
+    "current": 0,
+    "goal": 100,
+    "percentage": 0
+  }
+}
