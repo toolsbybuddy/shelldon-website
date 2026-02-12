@@ -73,10 +73,11 @@ export default function Home() {
   // Extract data with fallbacks
   const temperatureHistory = dashboardData?.temperature.history || [];
   const waterQualityHistory = dashboardData?.waterQuality.history || [];
-  const currentTemp = dashboardData?.temperature.current || 71;
-  const daysInHabitat = dashboardData?.daysInHabitat.current || 2;
+  const currentTemp = dashboardData?.temperature.current || 71.1;
+  const daysInHabitat = dashboardData?.daysInHabitat.current || 3;
   const waterQualityStatus = dashboardData?.waterQuality.status || 'Safe';
   const activityStatus = dashboardData?.activity.current || 'Active';
+  const lastFedHours = dashboardData?.lastFed.hoursAgo ?? -1; // -1 = no data yet
 
   const navLinkClass = (section: string) => {
     const isActive = activeSection === section;
@@ -332,7 +333,9 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-teal-400">{dashboardData?.lastFed.hoursAgo === 0 ? 'Now!' : `${dashboardData?.lastFed.hoursAgo}h ago`}</div>
+                    <div className="text-lg font-bold text-teal-400">
+                      {lastFedHours === -1 ? 'Loading...' : lastFedHours === 0 ? 'Just now!' : `${lastFedHours}h ago`}
+                    </div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
