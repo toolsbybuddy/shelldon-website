@@ -359,8 +359,8 @@ export default function Home() {
                       className="transition-all duration-500"
                     />
                   </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-green-400">{activityStatus}</div>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center px-2">
+                    <div className="text-xs font-bold text-green-400 text-center leading-tight">{activityStatus}</div>
                   </div>
                 </div>
                 <div className="mt-2 text-center">
