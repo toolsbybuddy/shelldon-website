@@ -1,15 +1,16 @@
 {
-  "lastUpdated": "2026-02-11T07:15:00-06:00",
+  "lastUpdated": "2026-02-11T20:40:00-06:00",
   "temperature": {
-    "current": 70.6,
+    "current": 71.1,
     "unit": "F",
-    "status": "Good",
+    "status": "Optimal",
     "history": [
       { "timestamp": "2026-02-08T18:00:00-06:00", "value": 74.0 },
       { "timestamp": "2026-02-09T09:00:00-06:00", "value": 74.0 },
       { "timestamp": "2026-02-10T09:54:00-06:00", "value": 71.2 },
       { "timestamp": "2026-02-10T16:46:00-06:00", "value": 71.6 },
-      { "timestamp": "2026-02-11T07:15:00-06:00", "value": 70.6 }
+      { "timestamp": "2026-02-11T07:15:00-06:00", "value": 70.6 },
+      { "timestamp": "2026-02-11T20:40:00-06:00", "value": 71.1 }
     ]
   },
   "daysInHabitat": {
@@ -17,11 +18,11 @@
     "captureDate": "2026-02-08"
   },
   "lastFed": {
-    "timestamp": "2026-02-11T07:15:00-06:00",
+    "timestamp": "2026-02-11T20:40:00-06:00",
     "hoursAgo": 0,
     "food": "Hikari Crab Cuisine",
-    "amount": "6 pellets",
-    "response": "Excellent - gobbled down immediately",
+    "amount": "7 pellets",
+    "response": "Ran fast with his little crustacean feet to catch them - loves this food!",
     "feedingHistory": [
       { 
         "timestamp": "2026-02-09T18:00:00-06:00", 
@@ -42,21 +43,29 @@
         "amount": "6 pellets", 
         "response": "Gobbled down immediately - excellent appetite",
         "notes": "Morning feeding, strong response"
+      },
+      { 
+        "timestamp": "2026-02-11T20:40:00-06:00", 
+        "food": "Hikari Crab Cuisine", 
+        "amount": "7 pellets", 
+        "response": "Ran fast to catch them - enthusiastic feeding!",
+        "notes": "Evening feeding, Dale observed strong running response"
       }
     ]
   },
   "activity": {
-    "current": "Active and feeding well",
-    "location": "Tank floor - ate 6 pellets immediately",
-    "notes": "Strong appetite, healthy response to food. Visible poop indicates good digestion."
+    "current": "Just fed - very active!",
+    "location": "Tank floor - chasing pellets",
+    "notes": "Showing excellent feeding behavior - running fast to catch food. Clearly loves Hikari Crab Cuisine!"
   },
   "waterQuality": {
-    "ph": 7.8,
+    "ph": 7.4,
     "ammonia": 0.02,
-    "status": "Safe",
+    "status": "Optimal",
     "history": [
       { "timestamp": "2026-02-10T16:56:00-06:00", "ph": 7.4, "ammonia": 0.02 },
-      { "timestamp": "2026-02-11T07:15:00-06:00", "ph": 7.8, "ammonia": 0.02 }
+      { "timestamp": "2026-02-11T07:15:00-06:00", "ph": 7.8, "ammonia": 0.02 },
+      { "timestamp": "2026-02-11T20:40:00-06:00", "ph": 7.4, "ammonia": 0.02 }
     ]
   },
   "donationProgress": {
