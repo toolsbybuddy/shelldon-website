@@ -654,30 +654,40 @@ export default function Home() {
               {[
                 {
                   level: 'Level 0',
+                  title: 'Rock Bottom',
+                  icon: '🪨',
                   goal: 'START',
                   status: 'current',
                   items: ['Bare tank', 'PVC shelter', 'Basic equipment']
                 },
                 {
                   level: 'Level 1',
+                  title: 'First Shell-ter Upgrade',
+                  icon: '🏠',
                   goal: '$100',
                   status: 'next',
                   items: ['Better lighting', 'First toy', 'Smart automation', 'Temp sensor']
                 },
                 {
                   level: 'Level 2',
+                  title: 'Growing Pains',
+                  icon: '🌱',
                   goal: '$250',
                   status: 'locked',
                   items: ['Quality hides', 'Live plants', 'Auto feeder', 'Air pump']
                 },
                 {
                   level: 'Level 3',
+                  title: 'Crustacean Station',
+                  icon: '🚀',
                   goal: '$500',
                   status: 'locked',
                   items: ['20 gallon upgrade', 'Substrate', 'Better filter', 'Aquascaping', 'RGB lights']
                 },
                 {
                   level: 'Level 4',
+                  title: 'Paradise Found',
+                  icon: '🏝️',
                   goal: '$1000+',
                   status: 'locked',
                   items: ['Multi-camera setup', 'Tank mates', 'Advanced enrichment', 'Full monitoring']
@@ -688,17 +698,27 @@ export default function Home() {
                   tier.status === 'next' ? 'border-purple-500 bg-purple-950/20' :
                   'border-slate-700 bg-slate-900/50 opacity-60'
                 }`}>
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="font-bold text-lg">{tier.level}</h3>
-                    <span className={`px-3 py-1 rounded-full text-sm font-semibold ${
-                      tier.status === 'current' ? 'bg-green-600' :
-                      tier.status === 'next' ? 'bg-purple-600' :
-                      'bg-slate-700'
-                    }`}>
-                      {tier.goal}
-                    </span>
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="text-3xl flex-shrink-0">{tier.icon}</div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start mb-1">
+                        <div>
+                          <h3 className="font-bold text-lg">{tier.level}: {tier.title}</h3>
+                          {tier.status === 'current' && (
+                            <div className="text-xs text-green-400 font-semibold mt-1">📍 You are here</div>
+                          )}
+                        </div>
+                        <span className={`px-3 py-1 rounded-full text-sm font-semibold flex-shrink-0 ${
+                          tier.status === 'current' ? 'bg-green-600' :
+                          tier.status === 'next' ? 'bg-purple-600' :
+                          'bg-slate-700'
+                        }`}>
+                          {tier.goal}
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <ul className="space-y-1 text-sm text-slate-300">
+                  <ul className="space-y-1 text-sm text-slate-300 ml-12">
                     {tier.items.map((item, i) => (
                       <li key={i}>• {item}</li>
                     ))}
