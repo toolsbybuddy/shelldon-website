@@ -22,8 +22,8 @@
     "timestamp": "2026-02-13T08:21:00-06:00",
     "hoursAgo": 0,
     "food": "Hikari Crab Cuisine",
-    "amount": "Feeding in progress",
-    "response": "🍤 LIVE FEEDING! Shelldon is eating like crazy right now - great time to watch!",
+    "amount": "10 pellets",
+    "response": "Eating like crazy - devoured all 10 pellets! Photo captured mid-feast.",
     "feedingHistory": [
       { 
         "timestamp": "2026-02-09T18:00:00-06:00", 
@@ -62,16 +62,16 @@
       { 
         "timestamp": "2026-02-13T08:21:00-06:00", 
         "food": "Hikari Crab Cuisine", 
-        "amount": "In progress", 
-        "response": "Eating like crazy - great feeding response!",
-        "notes": "Day 5 morning feeding - Dale reports excellent activity"
+        "amount": "10 pellets", 
+        "response": "Eating like crazy - devoured all 10 pellets!",
+        "notes": "Day 5 morning feeding - Photo captured mid-feast, excellent appetite"
       }
     ]
   },
   "activity": {
-    "current": "🍤 FEEDING NOW!",
-    "location": "Actively eating",
-    "notes": "Shelldon is eating like crazy right now - perfect time to watch the stream!"
+    "current": "Just fed - active!",
+    "location": "Hunting pellets",
+    "notes": "Devoured all 10 pellets with enthusiasm - photo captured mid-feast!"
   },
   "waterQuality": {
     "ph": 7.6,
