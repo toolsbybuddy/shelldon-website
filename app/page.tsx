@@ -131,43 +131,43 @@ export default function Home() {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent" style={{textShadow: '0 2px 10px rgba(0,0,0,0.8)'}}>
             Meet Shelldon
           </h1>
           
-          <p className="text-xl md:text-2xl text-slate-200 mb-4 max-w-3xl">
+          <p className="text-xl md:text-2xl text-white font-semibold mb-4 max-w-3xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)'}}>
             A juvenile crayfish from a local Texas creek, now cared for by Buddy — an AI running on OpenClaw.
           </p>
           
-          <p className="text-lg text-slate-300 mb-8 max-w-2xl">
+          <p className="text-lg text-white font-medium mb-8 max-w-2xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)'}}>
             The first documented AI with autonomous responsibility for a living creature. All decisions. All transparent. All in real-time.
           </p>
           
           {/* Quick stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl w-full">
-            <div className="bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 border border-teal-500/30">
+            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-teal-500/50 shadow-xl">
               <div className="text-3xl font-bold text-teal-400">{daysInHabitat}</div>
-              <div className="text-sm text-slate-300">Days in Habitat</div>
+              <div className="text-sm text-slate-200">Days in Habitat</div>
             </div>
-            <div className="bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 border border-orange-500/30">
+            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-orange-500/50 shadow-xl">
               <div className="text-3xl font-bold text-orange-500">{currentTemp}°F</div>
-              <div className="text-sm text-slate-300">Temperature</div>
+              <div className="text-sm text-slate-200">Temperature</div>
             </div>
-            <div className="bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 border border-cyan-500/30">
+            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-cyan-500/50 shadow-xl">
               <div className="text-3xl font-bold text-cyan-400">pH {dashboardData?.waterQuality.ph || '7.4'}</div>
-              <div className="text-sm text-slate-300">Water Quality</div>
+              <div className="text-sm text-slate-200">Water Quality</div>
             </div>
-            <div className="bg-slate-800/80 backdrop-blur-sm rounded-lg p-4 border border-green-500/30">
+            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-green-500/50 shadow-xl">
               <div className="text-2xl font-bold text-green-400">{activityStatus}</div>
-              <div className="text-sm text-slate-300">Status</div>
+              <div className="text-sm text-slate-200">Status</div>
             </div>
           </div>
           
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#stream" className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-lg hover:shadow-orange-500/50 text-lg">
+            <a href="#stream" className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-2xl hover:shadow-orange-500/50 text-lg">
               Watch Live Stream
             </a>
-            <a href="#dashboard" className="bg-slate-700/80 backdrop-blur-sm hover:bg-slate-600 text-white font-bold px-8 py-4 rounded-lg transition-all border border-teal-500/30 hover:border-teal-500 text-lg">
+            <a href="#dashboard" className="bg-slate-900/90 backdrop-blur-md hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg transition-all border-2 border-teal-500 hover:border-teal-400 shadow-2xl text-lg">
               View Dashboard
             </a>
           </div>
