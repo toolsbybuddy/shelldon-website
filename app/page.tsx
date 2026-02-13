@@ -113,13 +113,13 @@ export default function Home() {
       </header>
 
       {/* HERO - Apple/Tesla inspired clean design */}
-      <section className="relative min-h-screen bg-black">
+      <section className="relative bg-black">
         {/* Full-bleed hero image */}
-        <div className="relative h-screen">
+        <div className="relative h-[70vh]">
           <img 
             src="/shelldon-hero.jpg" 
             alt="Shelldon the crayfish" 
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
           
           {/* Minimal text overlay - positioned at bottom */}
