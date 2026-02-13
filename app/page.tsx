@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO - Full-width image with overlay */}
+      {/* HERO - Full-width image */}
       <section className="relative h-[600px] md:h-[700px] bg-slate-900">
         {/* Background image */}
         <div className="absolute inset-0">
@@ -121,8 +121,6 @@ export default function Home() {
             alt="Shelldon the crayfish" 
             className="w-full h-full object-cover"
           />
-          {/* Minimal gradient overlay - just at bottom for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
         </div>
         
         {/* Content overlay */}
