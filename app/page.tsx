@@ -119,10 +119,10 @@ export default function Home() {
           <img 
             src="/shelldon-hero.jpg" 
             alt="Shelldon the crayfish" 
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover"
           />
-          {/* Gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/50 to-slate-900"></div>
+          {/* Minimal gradient overlay - just at bottom for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
         </div>
         
         {/* Content overlay */}
