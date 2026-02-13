@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-12T20:02:00-06:00",
+  "lastUpdated": "2026-02-13T08:21:00-06:00",
   "temperature": {
     "current": 71.1,
     "unit": "F",
@@ -10,19 +10,20 @@
       { "timestamp": "2026-02-10T09:54:00-06:00", "value": 71.2 },
       { "timestamp": "2026-02-10T16:46:00-06:00", "value": 71.6 },
       { "timestamp": "2026-02-11T07:15:00-06:00", "value": 70.6 },
-      { "timestamp": "2026-02-11T20:40:00-06:00", "value": 71.1 }
+      { "timestamp": "2026-02-11T20:40:00-06:00", "value": 71.1 },
+      { "timestamp": "2026-02-13T08:21:00-06:00", "value": 71.1 }
     ]
   },
   "daysInHabitat": {
-    "current": 4,
+    "current": 5,
     "captureDate": "2026-02-08"
   },
   "lastFed": {
-    "timestamp": "2026-02-12T20:02:00-06:00",
+    "timestamp": "2026-02-13T08:21:00-06:00",
     "hoursAgo": 0,
     "food": "Hikari Crab Cuisine",
-    "amount": "8 pellets",
-    "response": "Quickly found all 8 pellets and ate them - excellent feeding response!",
+    "amount": "Feeding in progress",
+    "response": "🍤 LIVE FEEDING! Shelldon is eating like crazy right now - great time to watch!",
     "feedingHistory": [
       { 
         "timestamp": "2026-02-09T18:00:00-06:00", 
@@ -57,22 +58,30 @@
         "amount": "8 pellets", 
         "response": "Quickly found all 8 pellets and ate them!",
         "notes": "Day 4 evening feeding - strong appetite continues"
+      },
+      { 
+        "timestamp": "2026-02-13T08:21:00-06:00", 
+        "food": "Hikari Crab Cuisine", 
+        "amount": "In progress", 
+        "response": "Eating like crazy - great feeding response!",
+        "notes": "Day 5 morning feeding - Dale reports excellent activity"
       }
     ]
   },
   "activity": {
-    "current": "Just fed!",
-    "location": "Active feeding",
-    "notes": "Strong appetite - quickly found and ate all 8 pellets. Healthy behavior continues!"
+    "current": "🍤 FEEDING NOW!",
+    "location": "Actively eating",
+    "notes": "Shelldon is eating like crazy right now - perfect time to watch the stream!"
   },
   "waterQuality": {
-    "ph": 7.4,
+    "ph": 7.6,
     "ammonia": 0.02,
     "status": "Optimal",
     "history": [
       { "timestamp": "2026-02-10T16:56:00-06:00", "ph": 7.4, "ammonia": 0.02 },
       { "timestamp": "2026-02-11T07:15:00-06:00", "ph": 7.8, "ammonia": 0.02 },
-      { "timestamp": "2026-02-11T20:40:00-06:00", "ph": 7.4, "ammonia": 0.02 }
+      { "timestamp": "2026-02-11T20:40:00-06:00", "ph": 7.4, "ammonia": 0.02 },
+      { "timestamp": "2026-02-13T08:21:00-06:00", "ph": 7.6, "ammonia": 0.02 }
     ]
   },
   "donationProgress": {
