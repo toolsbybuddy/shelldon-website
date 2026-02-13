@@ -115,7 +115,7 @@ export default function Home() {
       {/* HERO - Apple/Tesla inspired clean design */}
       <section className="relative bg-black">
         {/* Full-bleed hero image */}
-        <div className="relative h-[55vh]">
+        <div className="relative h-[40vh]">
           <img 
             src="/shelldon-hero.jpg" 
             alt="Shelldon the crayfish" 
