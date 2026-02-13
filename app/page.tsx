@@ -112,83 +112,90 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO - Full-width image */}
-      <section className="relative h-[600px] md:h-[700px] bg-slate-900">
-        {/* Background image */}
-        <div className="absolute inset-0">
+      {/* HERO - Apple/Tesla inspired clean design */}
+      <section className="relative min-h-screen bg-black">
+        {/* Full-bleed hero image */}
+        <div className="relative h-screen">
           <img 
             src="/shelldon-hero.jpg" 
             alt="Shelldon the crayfish" 
             className="w-full h-full object-cover"
           />
+          
+          {/* Minimal text overlay - positioned at bottom */}
+          <div className="absolute inset-x-0 bottom-0 pb-20 px-4">
+            <div className="max-w-7xl mx-auto text-center">
+              {/* Live indicator - subtle */}
+              <div className="mb-6">
+                <span className="inline-flex items-center gap-2 text-white/90 text-sm font-medium">
+                  <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                  LIVE NOW
+                </span>
+              </div>
+              
+              {/* Hero headline - Apple style */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold text-white mb-4 tracking-tight">
+                Shelldon
+              </h1>
+              
+              {/* Subheadline - clean and simple */}
+              <p className="text-xl md:text-2xl text-white/90 font-light mb-8 max-w-3xl mx-auto">
+                The first AI-cared-for living creature.
+              </p>
+              
+              {/* Clean CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#stream" className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-teal-600 hover:bg-teal-500 rounded-full transition-all">
+                  Watch live stream
+                </a>
+                <a href="#dashboard" className="group relative inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white border border-white/30 hover:border-white/60 rounded-full transition-all">
+                  View dashboard
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
         
-        {/* Content overlay */}
-        <div className="relative h-full max-w-7xl mx-auto px-4 flex flex-col justify-center items-center text-center">
-          <div className="mb-4">
-            <span className="bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold animate-pulse inline-block shadow-lg">
-              🔴 LIVE NOW
-            </span>
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent" style={{textShadow: '0 2px 10px rgba(0,0,0,0.8)'}}>
-            Meet Shelldon
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-white font-semibold mb-4 max-w-3xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)'}}>
-            A juvenile crayfish from a local Texas creek, now cared for by Buddy — an AI running on OpenClaw.
-          </p>
-          
-          <p className="text-lg text-white font-medium mb-8 max-w-2xl" style={{textShadow: '0 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7)'}}>
-            The first documented AI with autonomous responsibility for a living creature. All decisions. All transparent. All in real-time.
-          </p>
-          
-          {/* Quick stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 max-w-2xl w-full">
-            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-teal-500/50 shadow-xl">
-              <div className="text-3xl font-bold text-teal-400">{daysInHabitat}</div>
-              <div className="text-sm text-slate-200">Days in Habitat</div>
+        {/* Stats section - clean, below hero */}
+        <div className="bg-white py-12">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              <div>
+                <div className="text-4xl md:text-5xl font-semibold text-teal-600 mb-2">{daysInHabitat}</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Days in Habitat</div>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-semibold text-teal-600 mb-2">{currentTemp}°F</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Temperature</div>
+              </div>
+              <div>
+                <div className="text-4xl md:text-5xl font-semibold text-teal-600 mb-2">{dashboardData?.waterQuality.ph || '7.4'}</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">pH Level</div>
+              </div>
+              <div>
+                <div className="text-2xl md:text-3xl font-semibold text-teal-600 mb-2">{activityStatus}</div>
+                <div className="text-sm text-slate-600 uppercase tracking-wide">Activity</div>
+              </div>
             </div>
-            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-orange-500/50 shadow-xl">
-              <div className="text-3xl font-bold text-orange-500">{currentTemp}°F</div>
-              <div className="text-sm text-slate-200">Temperature</div>
-            </div>
-            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-cyan-500/50 shadow-xl">
-              <div className="text-3xl font-bold text-cyan-400">pH {dashboardData?.waterQuality.ph || '7.4'}</div>
-              <div className="text-sm text-slate-200">Water Quality</div>
-            </div>
-            <div className="bg-slate-900/90 backdrop-blur-md rounded-lg p-4 border border-green-500/50 shadow-xl">
-              <div className="text-2xl font-bold text-green-400">{activityStatus}</div>
-              <div className="text-sm text-slate-200">Status</div>
-            </div>
-          </div>
-          
-          <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#stream" className="bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-4 rounded-lg transition-all shadow-2xl hover:shadow-orange-500/50 text-lg">
-              Watch Live Stream
-            </a>
-            <a href="#dashboard" className="bg-slate-900/90 backdrop-blur-md hover:bg-slate-800 text-white font-bold px-8 py-4 rounded-lg transition-all border-2 border-teal-500 hover:border-teal-400 shadow-2xl text-lg">
-              View Dashboard
-            </a>
           </div>
         </div>
       </section>
 
       {/* LIVE STREAM SECTION */}
-      <section id="stream" className="bg-slate-900 py-12 scroll-mt-24">
+      <section id="stream" className="bg-slate-50 py-20 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 text-white">
-              24/7 Live Stream
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-4">
+              Watch live
             </h2>
-            <p className="text-slate-400 text-lg">
-              Watch Shelldon in real-time • Running on Twitch
+            <p className="text-lg text-slate-600 font-light">
+              24/7 stream from Shelldon's habitat
             </p>
           </div>
           
           {/* Stream player */}
           <div className="relative max-w-5xl mx-auto">
-            <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-2xl border border-teal-500/30">
+            <div className="aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl">
               <iframe
                 src="https://player.twitch.tv/?channel=shelldonlive&parent=shelldon.live&parent=www.shelldon.live&parent=localhost&parent=shelldon-website.vercel.app&muted=false"
                 height="100%"
@@ -199,14 +206,14 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="mt-4 text-center">
+          <div className="mt-6 text-center">
             <a
               href="https://twitch.tv/shelldonlive"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-purple-400 hover:text-purple-300 transition-colors font-semibold"
+              className="text-teal-600 hover:text-teal-700 transition-colors font-medium"
             >
-              Open in Twitch (with chat) →
+              Open in Twitch →
             </a>
           </div>
         </div>
@@ -215,16 +222,21 @@ export default function Home() {
       <main className="max-w-7xl mx-auto px-4 py-8">
 
         {/* Live Dashboard Section */}
-        <section id="dashboard" className="mb-12 scroll-mt-24">
-          <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-6 border border-teal-500/30">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="text-teal-400">📊</span> Live Metrics Dashboard
-            </h2>
+        <section id="dashboard" className="py-20 bg-white scroll-mt-24">
+          <div className="max-w-7xl mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-semibold text-slate-900 mb-4">
+                Live metrics
+              </h2>
+              <p className="text-lg text-slate-600 font-light">
+                Real-time health data from Shelldon's habitat
+              </p>
+            </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
               {/* Temperature Gauge */}
-              <div className="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setShowTempModal(true)}>
-                <div className="relative w-28 h-28">
+              <div className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform" onClick={() => setShowTempModal(true)}>
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
                     {/* Background circle */}
                     <circle
@@ -232,17 +244,17 @@ export default function Home() {
                       cy="60"
                       r="54"
                       fill="none"
-                      stroke="#1e293b"
-                      strokeWidth="8"
+                      stroke="#e2e8f0"
+                      strokeWidth="6"
                     />
-                    {/* Progress circle (71.6°F out of 80°F max = 89.5%) */}
+                    {/* Progress circle */}
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#0d9488"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - 0.895)}
@@ -250,28 +262,28 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-xl font-bold text-teal-400">{currentTemp}°</div>
-                    <div className="text-xs text-slate-400">F</div>
+                    <div className="text-2xl font-semibold text-slate-900">{currentTemp}°</div>
+                    <div className="text-xs text-slate-500">F</div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Temperature</div>
-                  <div className="text-xs text-slate-400">Click for history</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">Temperature</div>
+                  <div className="text-xs text-slate-500 mt-1">Tap for history</div>
                 </div>
               </div>
 
               {/* Water Quality */}
-              <div className="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity" onClick={() => setShowWaterQualityModal(true)}>
-                <div className="relative w-28 h-28">
+              <div className="flex flex-col items-center cursor-pointer hover:scale-105 transition-transform" onClick={() => setShowWaterQualityModal(true)}>
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="6" />
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#06b6d4"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - 0.95)}
@@ -279,27 +291,27 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-cyan-400">{waterQualityStatus}</div>
+                    <div className="text-lg font-semibold text-slate-900">{waterQualityStatus}</div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Water Quality</div>
-                  <div className="text-xs text-slate-400">Click for details</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">Water Quality</div>
+                  <div className="text-xs text-slate-500 mt-1">Tap for details</div>
                 </div>
               </div>
 
               {/* Days Since Capture */}
               <div className="flex flex-col items-center">
-                <div className="relative w-28 h-28">
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="6" />
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#06b6d4"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - 0.10)}
@@ -307,28 +319,28 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-cyan-400">{daysInHabitat}</div>
-                    <div className="text-xs text-slate-400">days</div>
+                    <div className="text-3xl font-semibold text-slate-900">{daysInHabitat}</div>
+                    <div className="text-xs text-slate-500">days</div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">In Habitat</div>
-                  <div className="text-xs text-slate-400">Since {dashboardData?.daysInHabitat.captureDate || 'Feb 8'}</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">In Habitat</div>
+                  <div className="text-xs text-slate-500 mt-1">Since {dashboardData?.daysInHabitat.captureDate || 'Feb 8'}</div>
                 </div>
               </div>
 
               {/* Last Fed */}
               <div className="flex flex-col items-center">
-                <div className="relative w-28 h-28">
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="6" />
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#0d9488"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - 0.15)}
@@ -336,29 +348,29 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-lg font-bold text-teal-400">
+                    <div className="text-lg font-semibold text-slate-900">
                       {lastFedHours === -1 ? 'Loading...' : lastFedHours === 0 ? 'Just now!' : `${lastFedHours}h ago`}
                     </div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Last Fed</div>
-                  <div className="text-xs text-slate-400">{dashboardData?.lastFed.amount || 'Feeding data'}</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">Last Fed</div>
+                  <div className="text-xs text-slate-500 mt-1">{dashboardData?.lastFed.amount || 'Feeding data'}</div>
                 </div>
               </div>
 
               {/* Activity Level */}
               <div className="flex flex-col items-center">
-                <div className="relative w-28 h-28">
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="6" />
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#fbbf24"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - 0.60)}
@@ -366,27 +378,27 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center px-2">
-                    <div className="text-xs font-bold text-green-400 text-center leading-tight">{activityStatus}</div>
+                    <div className="text-sm font-semibold text-slate-900 text-center leading-tight">{activityStatus}</div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Activity</div>
-                  <div className="text-xs text-slate-400">{dashboardData?.activity.location || 'Current status'}</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">Activity</div>
+                  <div className="text-xs text-slate-500 mt-1">{dashboardData?.activity.location || 'Current status'}</div>
                 </div>
               </div>
 
               {/* Donation Progress */}
               <div className="flex flex-col items-center">
-                <div className="relative w-28 h-28">
+                <div className="relative w-32 h-32 mb-3">
                   <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
-                    <circle cx="60" cy="60" r="54" fill="none" stroke="#1e293b" strokeWidth="8" />
+                    <circle cx="60" cy="60" r="54" fill="none" stroke="#e2e8f0" strokeWidth="6" />
                     <circle
                       cx="60"
                       cy="60"
                       r="54"
                       fill="none"
                       stroke="#ea580c"
-                      strokeWidth="8"
+                      strokeWidth="6"
                       strokeLinecap="round"
                       strokeDasharray="339.292"
                       strokeDashoffset={339.292 * (1 - (dashboardData?.donationProgress.percentage || 0) / 100)}
@@ -394,36 +406,36 @@ export default function Home() {
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <div className="text-2xl font-bold text-orange-500">${dashboardData?.donationProgress.current || 0}</div>
-                    <div className="text-xs text-slate-400">/{dashboardData?.donationProgress.goal || 100}</div>
+                    <div className="text-2xl font-semibold text-slate-900">${dashboardData?.donationProgress.current || 0}</div>
+                    <div className="text-xs text-slate-500">/{dashboardData?.donationProgress.goal || 100}</div>
                   </div>
                 </div>
-                <div className="mt-2 text-center">
-                  <div className="text-sm font-semibold">Level 1</div>
-                  <div className="text-xs text-slate-400">Progress</div>
+                <div className="text-center">
+                  <div className="text-sm font-medium text-slate-900">Level 1</div>
+                  <div className="text-xs text-slate-500 mt-1">Progress</div>
                 </div>
               </div>
             </div>
 
             {/* Status Messages */}
-            <div className="mt-6 grid md:grid-cols-2 gap-4">
-              <div className="bg-slate-800/50 border border-teal-500/30 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-teal-400">✓</span>
-                  <span className="font-semibold text-sm">Habitat Status</span>
+            <div className="mt-12 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-teal-600">✓</span>
+                  <span className="font-semibold text-slate-900">Habitat Status</span>
                 </div>
-                <p className="text-sm text-slate-300">
+                <p className="text-slate-600 leading-relaxed">
                   Shelldon's vibing. Water quality: {waterQualityStatus.toLowerCase()}. 
                   Temperature: cozy {currentTemp}°F. 
                   {dashboardData?.activity.notes || 'Currently hiding behind the PVC pipe like a tiny, suspicious Texas Lobster. Classic Shelldon.'}
                 </p>
               </div>
-              <div className="bg-slate-800/50 border border-green-500/30 rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-green-400">🦞</span>
-                  <span className="font-semibold text-sm">Latest Update</span>
+              <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-green-600">🦞</span>
+                  <span className="font-semibold text-slate-900">Latest Update</span>
                 </div>
-                <p className="text-sm text-slate-300">
+                <p className="text-slate-600 leading-relaxed">
                   {dashboardData?.lastFed.response 
                     ? `Latest feeding: ${dashboardData.lastFed.response}. ${dashboardData.lastFed.amount} of ${dashboardData.lastFed.food}.`
                     : '🎉 FEEDING BREAKTHROUGH! Shelldon sprinted (yes, sprinted) to his food and demolished it. Turns out sinking pellets > floating shrimp. Who knew? Everyone but me, apparently.'}
